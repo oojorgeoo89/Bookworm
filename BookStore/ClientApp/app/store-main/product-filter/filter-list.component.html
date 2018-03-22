@@ -1,0 +1,33 @@
+﻿<h3>Filters:</h3>
+
+<hr />
+
+<form *ngIf="filterList">
+
+    <label>Search:</label>
+    <input [(ngModel)]="filterBundle.searchString" type="text" class="form-control paddedVertically" placeholder="Search for..." name="search">
+    
+    <label>Genre:</label>
+    <div class="form-group">
+        <div *ngFor="let filter of filterList.genres" class="checkbox">
+            <label><input (change)="onFilterChanged($event)" type="checkbox" [value]="filter.id" name="genres">{{ filter.name }}</label>
+        </div>
+    </div>
+
+    <label>Format:</label>
+    <div class="form-group">
+        <div *ngFor="let filter of filterList.formats" class="checkbox">
+            <label><input (change)="onFilterChanged($event)" type="checkbox" [value]="filter.id" name="formats">{{ filter.name }}</label>
+        </div>
+    </div>
+
+    <label>Language:</label>
+    <div class="form-group">
+        <div *ngFor="let filter of filterList.languages" class="checkbox">
+            <label><input (change)="onFilterChanged($event)" type="checkbox" [value]="filter.id" name="languages">{{ filter.name }}</label>
+        </div>
+    </div>
+
+    <button (click)="submitFilters()" type="button" class="btn btn-primary btn-block">Apply filters</button>
+
+</form>

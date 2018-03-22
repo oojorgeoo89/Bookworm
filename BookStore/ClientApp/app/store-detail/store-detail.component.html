@@ -1,0 +1,37 @@
+﻿<div class="row">
+    <div class="col-md-8 col-md-offset-2" *ngIf="book">
+        <h2>{{ book.title }}</h2>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-md-8">
+                <div class="form-group">
+                    <h3>Summary:</h3>
+
+                    {{ book.summary }}
+                </div>
+
+                <div class=form-group>
+                    <select class="form-control" [(ngModel)]="selectedOffer">
+                        <option *ngFor="let offer of book.offers" [ngValue]="offer">{{ offer.language.name + " (" + offer.format.name + ")" }} {{ offer.price | currency:'NOK':'1.0.0' }}</option>
+                    </select>
+                </div>
+
+                <hr />
+
+                <div class="form-group text-center">
+                    <button (click)="addToCart()" type="button" class="btn btn-primary"><i class="fas fa-shopping-cart"></i>  Add to Cart</button>
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+                <img [src]="book.image">
+                <p><strong>Genre: </strong> {{ book.genre.name }}</p>
+                <p><strong>Isbn: </strong> {{ book.isbn }}</p>
+            </div>
+
+        </div>
+    </div>
+</div>

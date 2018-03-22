@@ -1,0 +1,41 @@
+﻿body {
+    padding-top: 80px;
+    padding-bottom: 20px
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px
+}
+
+.paddedVertically {
+    margin-bottom: 20px;
+    margin-right: 20px
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%
+}
+
+.productGridItem .bookTitle {
+    font-weight: bold;
+    color: #3e3f3a
+}
+
+.productGridItem .bookPrice {
+    font-weight: bold;
+    font-size: 150%
+}
+
+.row.display-flex {
+    display: flex;
+    flex-wrap: wrap
+}
+
+    .row.display-flex > [class*='col-'] {
+        display: flex;
+        flex-direction: column
+    }

@@ -1,0 +1,39 @@
+﻿<div class="row">
+    <div class="col-md-8 col-md-offset-2" *ngIf="cart">
+
+        <h2>Cart Summary:</h2>
+        <hr/>
+
+        <table class="table table-hover">
+            
+            <thead>
+                <tr>
+                    <th>Book</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let order of cart.orders">
+                    <td>{{ order.offer.book.title }} - {{ order.offer.format.name }}, {{ order.offer.language.name }}</td>
+                    <td>{{ order.offer.price | currency:'NOK':'1.0.0' }}</td>
+                    <td>{{ order.quantity }}</td>
+                    <td>{{ order.subtotal | currency:'NOK':'1.0.0' }}</td>
+                    <td><i class="fas fa-trash-alt delete-icon" (click)="removeFromCart(order)"></i></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 col-md-offset-6 text-right">
+        <p class="text-right"><strong>Total:</strong> {{ cart.totalPrice | currency:'NOK':'1.0.0' }}</p>
+
+        <a routerLink="/" class="btn btn-primary">Cancel</a>
+        <button class="btn btn-success" (click)="onCheckout()">Complete Purchase</button>
+    </div>
+</div>

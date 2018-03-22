@@ -1,0 +1,7 @@
+﻿<div class="productGridItem text-center">    
+    <a routerLink="{{ product.id }}" routerLinkActive="active">
+        <img [src]="product.image">
+    </a>
+    <a class="bookTitle" routerLink="{{ product.id }}" routerLinkActive="active">{{ product.title }}</a>
+    <p class="bookPrice">{{ price | currency:'NOK':'1.0.0' }}</p>
+</div>

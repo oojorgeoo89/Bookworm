@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="6.10.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\images\banner1.svg" />
+    <Content Remove="wwwroot\lib\jquery-validation\LICENSE.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\img\" />
+    <Folder Include="Repository\" />
+    <Folder Include="Services\" />
+    <Folder Include="Controllers\API\" />
+    <Folder Include="Models\ViewModels\" />
+    <Folder Include="Models\Helpers\" />
+    <Folder Include="ClientApp\app\store-main\" />
+    <Folder Include="ClientApp\app\store-main\product-filter\" />
+    <Folder Include="ClientApp\app\store-main\product-list\" />
+    <Folder Include="Migrations\" />
+    <Folder Include="ClientApp\app\store-detail\" />
+    <Folder Include="ClientApp\app\common\" />
+    <Folder Include="ClientApp\app\cart\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="app\app.component.ts" />
+    <None Remove="assets\.gitkeep" />
+    <None Remove="environments\environment.prod.ts" />
+    <None Remove="environments\environment.ts" />
+  </ItemGroup>
+</Project>
